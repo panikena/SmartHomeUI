@@ -1,0 +1,133 @@
+#welcome{
+    font-size: 30px;
+}
+
+
+#loginBlock{
+  margin: auto;
+  width: 100%;
+  padding: 15px;
+  border-radius : 5px;
+ /*
+  opaque border
+ */
+ border: 1px solid rgba(128, 128, 128, .5);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  #loginBlock{
+    width: 30%;
+  }
+}
+
+.loginInput{
+    margin: 5px;
+}
+
+.sidenav-menu{
+  width: 200px;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+  display: flex;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.widget{
+  border-radius : 5px;
+  /*
+   opaque border
+  */
+  border: 1px solid rgba(128, 128, 128, .5);
+  width: 50%;
+  height: 150px;
+  
+  flex-grow: 0;
+  flex-shrink:1;
+  flex-basis: auto;
+  margin: 10px auto 10px auto;
+  padding: 10px;
+}
+
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .widget{    
+    width: 250px;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+  }
+}
+
+.menuItem:hover{
+  cursor: pointer;
+}
+
+.widgetPanel{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex-wrap:wrap;
+}
+
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .widgetPanel{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+  }
+}
+
+.filler {
+  flex-grow: 1;
+}
+
+#signoutBtn
+{
+  font-size: 15px;
+}
+
+.welcomeImage{
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .welcomeImage{
+    width: 30%;
+  }
+}

@@ -1,21 +1,98 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div>
 
-<router-outlet></router-outlet>
+  <div *ngIf="!isLoggedIn" style="text-align:center">
+    <img class="welcomeImage" alt="" src="/assets/welcome.jpg">
+    <p id="welcome">Welcome</p>
+    <div id="loginBlock">
+      <div class="loginInput">
+        <mat-form-field>
+          <input type="text" matInput placeholder="Имя" [(ngModel)]="name">
+        </mat-form-field>
+      </div>
+      <div class="loginInput">
+        <mat-form-field>
+          <input type="password" matInput placeholder="Пароль" [(ngModel)]="password">
+        </mat-form-field>
+      </div>
+      <button mat-flat-button color="primary" (click)="signIn()">Sign in</button>
+
+      <div *ngIf="wrongPassword" style="color:red">
+        Неправильный пароль!
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isLoggedIn">
+    <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+      <mat-toolbar color="primary" class="example-toolbar">
+        <button *ngIf="mobileQuery.matches" mat-icon-button (click)="toggleMenu()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="example-app-name">Smart Home</h1>
+        <div class="filler"></div>
+        <button id="signoutBtn" mat-button (click)="signOut()">
+          Sign out
+        </button>
+      </mat-toolbar>
+
+      <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #snav class="sidenav-menu" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+          fixedTopGap="56" [opened]="!mobileQuery.matches">
+          <mat-nav-list>
+            <div class="menuItem" mat-list-item [routerLink]="nav.link" *ngFor="let nav of menuItems">
+              <img [src]="nav.img"> {{nav.name}}
+            </div>
+          </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+          <div class="widgetPanel">
+            <div class="widget">
+              <input type="text" [(ngModel)]="command">
+              <button (click)="sendCommand()">Send</button>
+            </div>
+
+            <div class="widget">
+              Message from Brick {{message}}
+            </div>
+            <div class="widget">
+              Message from Brick {{message}}
+            </div>
+            <div class="widget">
+              Message from Brick {{message}}
+            </div>
+            <div class="widget">
+              Message from Brick {{message}}
+            </div>
+            <div class="widget">
+              Message from Brick {{message}}
+            </div>
+            <div class="widget">
+              Message from Brick {{message}}
+            </div>
+            <div class="widget">
+              Message from Brick {{message}}
+            </div>
+            <div class="widget">
+              Message from Brick {{message}}
+            </div>
+            <div class="widget">
+              Message from Brick {{message}}
+            </div>
+            <div class="widget">
+              Message from Brick {{message}}
+            </div>
+            <div class="widget">
+              Message from Brick {{message}}
+            </div>
+
+
+          </div>
+          <router-outlet></router-outlet>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </div>
+  </div>
+
+
+</div>
