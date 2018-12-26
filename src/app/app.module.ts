@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 
 
 //Material modules
-import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatButtonModule, MatInputModule } from '@angular/material';
+import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatButtonModule, MatInputModule, MatButtonToggleModule} from '@angular/material';
+import { LightSwitchComponent } from './widgets/light-switch/light-switch.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LightSwitchComponent
   ],
   imports: [
     FormsModule,
@@ -28,6 +30,7 @@ import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatBu
     MatListModule,
     MatButtonModule,
     MatInputModule,
+    MatButtonToggleModule,
   ],
   
   entryComponents: [AppComponent],

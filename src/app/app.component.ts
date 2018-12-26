@@ -21,14 +21,13 @@ export class AppComponent implements OnDestroy {
 
   name: string;
   password: string;
+  displayName : string;
 
   public command : string = null;
 
-  message :string;
-
   mobileQuery: MediaQueryList;
 
-  menuItems : any[] =  [{ link : ".", img : "http://lorempixel/40/40", name : "Home"}]
+  menuItems : any[] =  [{ link : ".", img : "assets/home.svg", name : "Home"}]
 
   private _mobileQueryListener: () => void;
 
@@ -37,8 +36,8 @@ export class AppComponent implements OnDestroy {
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
     
-    webSocketService.onMessage.subscribe(e => {
-      this.message = e.data;
+    webSocketService.onOpen.subscribe(e =>{
+      this.changeDetectorRef.detectChanges();
     })
   } 
   sendCommand(){
@@ -48,6 +47,8 @@ export class AppComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+    this.webSocketService.onOpen.unsubscribe()
+    this.webSocketService.onMessage.unsubscribe()
   }
 
   toggleMenu(){
@@ -59,6 +60,7 @@ export class AppComponent implements OnDestroy {
     if (this.name != null && this.password != null) {
       this.isLoggedIn = true;
       this.wrongPassword = false;
+      this.displayName = this.name;
       this.name = this.password = null
     }
     else {

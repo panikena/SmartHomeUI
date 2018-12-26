@@ -1,7 +1,14 @@
+* {
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ button, span, div, p{
+  font-family:inherit;
+ }
+
 #welcome{
     font-size: 30px;
 }
-
 
 #loginBlock{
   margin: auto;
@@ -64,31 +71,8 @@ h1.example-app-name {
   flex: 1 0 auto;
 }
 
-.widget{
-  border-radius : 5px;
-  /*
-   opaque border
-  */
-  border: 1px solid rgba(128, 128, 128, .5);
-  width: 50%;
-  height: 150px;
-  
-  flex-grow: 0;
-  flex-shrink:1;
-  flex-basis: auto;
-  margin: 10px auto 10px auto;
-  padding: 10px;
-}
-
-
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .widget{    
-    width: 250px;
-    height: 150px;
-    margin: 10px;
-    padding: 10px;
-  }
+.menuItem{
+  margin: 5px;
 }
 
 .menuItem:hover{

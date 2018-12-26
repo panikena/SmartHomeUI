@@ -1,0 +1,19 @@
+<div class="widget">
+
+  <div>
+    <img height="35" [src]="lightStatus ? '/assets/lampOn.png' : '/assets/lampOff.png'">
+    <span>{{lightName}}</span>
+  </div>
+
+  <div class="buttonGroup">
+    <mat-button-toggle-group #group="matButtonToggleGroup" [value]="lightValue" (change)="onButtonClicked(group.value)">
+      <mat-button-toggle value="On">
+        On
+      </mat-button-toggle>
+      <mat-button-toggle value="Off">
+        Off
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+</div>
