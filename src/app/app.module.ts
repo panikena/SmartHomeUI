@@ -10,14 +10,16 @@ import { AppComponent } from './app.component';
 
 
 //Material modules
-import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatButtonModule, MatInputModule, MatButtonToggleModule} from '@angular/material';
+import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatButtonModule, MatInputModule, MatButtonToggleModule, MatSliderModule} from '@angular/material';
 import { LightSwitchComponent } from './widgets/light-switch/light-switch.component';
+import { ColorPickerSwitchComponent } from './widgets/color-picker-switch/color-picker-switch.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LightSwitchComponent
+    LightSwitchComponent,
+    ColorPickerSwitchComponent
   ],
   imports: [
     FormsModule,
@@ -31,6 +33,7 @@ import { LightSwitchComponent } from './widgets/light-switch/light-switch.compon
     MatButtonModule,
     MatInputModule,
     MatButtonToggleModule,
+    MatSliderModule,
   ],
   
   entryComponents: [AppComponent],

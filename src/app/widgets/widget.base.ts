@@ -16,6 +16,6 @@ export abstract class BaseWidget
 
 
     abstract getWidgetType() : string;
-    protected messageFilter  = filter<MessageEvent>(event => event.data.widgetID == this.widgetID)    
+    protected messageFilter  = filter<MessageEvent>(event => JSON.parse(event.data).WidgetID == this.widgetID)    
 
 }

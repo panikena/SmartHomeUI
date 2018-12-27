@@ -1,0 +1,25 @@
+<div class="widget">
+
+    <div>
+      <img height="35" [src]="isTurnedOn ? '/assets/lampOn.png' : '/assets/lampOff.png'">
+      <span>{{lightName}}</span>
+    </div>
+
+    <div>
+        <mat-slider min="0" max="255" [(ngModel)]="color1" [disabled]="!isTurnedOn" (change)="onColorChanged($event)"></mat-slider>{{color1}}
+        <mat-slider min="0" max="255" [(ngModel)]="color2" [disabled]="!isTurnedOn" (change)="onColorChanged($event)"></mat-slider>{{color2}}
+        <mat-slider min="0" max="255" [(ngModel)]="color3" [disabled]="!isTurnedOn" (change)="onColorChanged($event)"></mat-slider>{{color3}}
+    </div>
+  
+    <div class="buttonGroup">
+      <mat-button-toggle-group #group="matButtonToggleGroup"  (change)="onButtonClicked(group.value)">
+        <mat-button-toggle value="On">
+          On
+        </mat-button-toggle>
+        <mat-button-toggle value="Off">
+          Off
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  
+  </div>
