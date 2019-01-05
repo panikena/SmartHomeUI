@@ -2,9 +2,13 @@
   font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
- button, span, div, p{
+mat-icon{
+  font-family: 'Material Icons' !important;
+}
+
+button, span, div, p{
   font-family:inherit;
- }
+}
 
 #welcome{
     font-size: 30px;
@@ -79,23 +83,6 @@ h1.example-app-name {
   cursor: pointer;
 }
 
-.widgetPanel{
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  flex-wrap:wrap;
-}
-
-
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .widgetPanel{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-  }
-}
-
 .filler {
   flex-grow: 1;
 }
@@ -103,6 +90,7 @@ h1.example-app-name {
 #signoutBtn
 {
   font-size: 15px;
+  height: 100%;
 }
 
 .welcomeImage{

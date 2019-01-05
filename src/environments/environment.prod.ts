@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  webSocketUrl : "ws://192.168.1.103:2012"
+  webSocketLocalUrl : "ws://192.168.1.103:2012",
+  webSocketExternalUrl : "ws://134.249.136.83:2012",
+  externalHostname : "134.249.136.83" 
 };

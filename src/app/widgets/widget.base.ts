@@ -7,6 +7,9 @@ export abstract class BaseWidget
     @Input()
     public widgetID : number;
 
+    @Input()
+    public widgetName : string;
+
     
     /**
      *

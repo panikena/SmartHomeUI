@@ -31,7 +31,7 @@
         <h1 class="example-app-name">Hello, {{displayName}}!</h1>
         <div class="filler"></div>
         <button id="signoutBtn" mat-button (click)="signOut()">
-          Sign out
+          <img style="height: 80%" alt="Sign Out" src="/assets/logout.svg">
         </button>
       </mat-toolbar>
 
@@ -39,7 +39,7 @@
         <mat-sidenav #snav class="sidenav-menu" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
           fixedTopGap="56" [opened]="!mobileQuery.matches">
           <mat-nav-list>
-            <div class="menuItem" mat-list-item [routerLink]="nav.link" *ngFor="let nav of menuItems">
+            <div class="menuItem" mat-list-item [routerLink]="nav.link" *ngFor="let nav of menuItems" (click)="onMenuItemClick()">
               <img height="50"  [src]="nav.img"> 
               <span>{{nav.name}}</span>
             </div>
@@ -47,20 +47,6 @@
         </mat-sidenav>
 
         <mat-sidenav-content>
-          <div class="widgetPanel">
-           
-            <app-light-switch>
-            </app-light-switch>
-            <app-color-picker-switch>
-            </app-color-picker-switch>
-
-            <div class="widget">
-              Message from Brick {{message}}
-            </div>
-            <div class="widget">
-              Message from Brick {{message}}
-            </div>
-          </div>
           <router-outlet></router-outlet>
         </mat-sidenav-content>
       </mat-sidenav-container>

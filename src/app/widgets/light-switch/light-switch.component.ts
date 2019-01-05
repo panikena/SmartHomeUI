@@ -10,14 +10,13 @@ import { MatButtonToggleGroup } from '@angular/material';
 })
 export class LightSwitchComponent extends BaseWidget implements OnInit {
 
-  lightName : string;
   lightStatus : boolean;
   lightValue : string;
 
   constructor(webSocketService : WebSocketService) { 
     super(webSocketService);
 
-    this.lightName = "Switch 1";
+    this.widgetName = "Switch 1";
 
     webSocketService.onMessage.pipe(this.messageFilter).subscribe(e => {
       this.lightValue = e.data.status

@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  webSocketUrl : "ws://192.168.1.103:2012"
+  webSocketLocalUrl : "ws://192.168.1.103:2012",
+  webSocketExternalUrl : "ws://134.249.136.83:2012",
+  externalHostname : "134.249.136.83"
 };
 
 /*
@@ -15,3 +17,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+

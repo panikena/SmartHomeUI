@@ -13,13 +13,19 @@ import { AppComponent } from './app.component';
 import { MatSidenavModule, MatIconModule, MatToolbarModule, MatListModule, MatButtonModule, MatInputModule, MatButtonToggleModule, MatSliderModule} from '@angular/material';
 import { LightSwitchComponent } from './widgets/light-switch/light-switch.component';
 import { ColorPickerSwitchComponent } from './widgets/color-picker-switch/color-picker-switch.component';
+import { ThermoComponent } from './widgets/thermo/thermo.component';
+import { HomeComponent } from './panels/home/home.component';
+import { AboutComponent } from './panels/about/about.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LightSwitchComponent,
-    ColorPickerSwitchComponent
+    ColorPickerSwitchComponent,
+    ThermoComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     FormsModule,

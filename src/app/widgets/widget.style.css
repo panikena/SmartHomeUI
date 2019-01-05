@@ -9,8 +9,8 @@
     */
     border: 1px solid rgba(128, 128, 128, .5);
     border-radius : 5px;
-    width: 50%;
-    height: 200px;
+    width: 65%;
+    height: 250px;
     
     flex-grow: 0;
     flex-shrink:1;
@@ -24,7 +24,7 @@
     /* For desktop: */
     .widget{    
       width: 300px;
-      height: 200px;
+      height: 250px;
       margin: 10px;
       padding: 10px;
     }
@@ -32,4 +32,8 @@
   
   .buttonGroup{
     text-align: center;
+  }
+
+  .widgetContent{
+    margin: 5px;
   }

@@ -12,17 +12,16 @@ export class ColorPickerSwitchComponent extends BaseWidget implements OnInit {
   color1 : number
   color2 : number
   color3 : number
-  lightName : string;
   isTurnedOn: boolean;
 
   constructor(webSocketService : WebSocketService) { 
     super(webSocketService);
 
     this.widgetID = 2;
-    this.lightName = "LED Strip 1"
-    //
+    this.widgetName = "LED Strip 1"
+    
     webSocketService.onMessage.pipe(this.messageFilter).subscribe(e => {
-      console.log("got my msg")
+      console.log(this.getWidgetType() + " got my msg")
 
       var msg = JSON.parse(e.data);
       
