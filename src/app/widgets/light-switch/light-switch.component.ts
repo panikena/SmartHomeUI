@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { WebSocketService } from 'src/app/web-socket.service';
 import { BaseWidget } from '../widget.base';
-import { MatButtonToggleGroup } from '@angular/material';
 
 @Component({
   selector: 'app-light-switch',
