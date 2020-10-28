@@ -1,4 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
+import { isNullOrUndefined } from 'util';
 import { environment } from '../environments/environment';
 
 @Injectable({
@@ -17,7 +18,7 @@ export class WebSocketService {
   }
 
   init() {
-    let wsAddress = window.location.hostname == environment.externalHostname ? environment.webSocketExternalUrl : environment.webSocketLocalUrl
+    let wsAddress = `ws://${!isNullOrUndefined(environment.webSocketUrl) ? environment.webSocketUrl : window.location.hostname}:${environment.webSocketPort}`;
 
     if (this.ws == null) {
       this.ws = new WebSocket(wsAddress)
